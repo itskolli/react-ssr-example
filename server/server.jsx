@@ -24,7 +24,7 @@ fs.readdir('/var/task', (err, files) => {
     if (fileDetails.isDirectory()) {
       console.log('Directory:  ' + file);
     } else {
-      console.log('File:  ' + file);
+      console.log('File: ' + file);
     }
   });
 });
