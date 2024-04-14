@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
     //   return res.status(500).send("An error occurred");
     // }
 
+    const pathInfo = path.resolve(__dirname);
+
     const data = `<!DOCTYPE html>
     <html>
     
@@ -32,6 +34,7 @@ app.get("/", (req, res) => {
     
     <body>
       <div id="root"></div>
+      <p>${pathInfo}</p>
       <script src="bundle.js"></script>
     </body>
     
