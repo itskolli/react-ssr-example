@@ -9,6 +9,11 @@ import App from "../src/App";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
+console.log(path.resolve(__dirname, "../", "dist"));
+app.use(
+  express.static(path.resolve(__dirname, "../", "dist"), { maxAge: "30d" })
+);
+
 
 app.get("/", (req, res) => {
   fs.readFile(path.resolve("./public/index.html"), "utf8", (err, data) => {
@@ -26,9 +31,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use(
-  express.static(path.resolve(__dirname, ".", "dist"), { maxAge: "30d" })
-);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
