@@ -22,9 +22,9 @@ fs.readdir('/var/task', (err, files) => {
     let fileDetails = fs.lstatSync(path.resolve(directory, file));
     // check if the file is directory 
     if (fileDetails.isDirectory()) {
-      console.log('Directory: ' + file);
+      console.log('Directory:  ' + file);
     } else {
-      console.log('File: ' + file);
+      console.log('File:  ' + file);
     }
   });
 });
