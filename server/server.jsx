@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 console.log(path.resolve(__dirname, "../", "dist"));
 app.use(
-  express.static(path.resolve(__dirname, "../../static"), { maxAge: "30d" })
+  express.static("./.amplify-hosting/static", { maxAge: "30d" })
 );
 
 
