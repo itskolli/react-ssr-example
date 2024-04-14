@@ -16,11 +16,26 @@ app.use(
 
 
 app.get("/", (req, res) => {
-  fs.readFile(path.resolve(__dirname, "../../", "static/index.html"), "utf8", (err, data) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send("An error occurred");
-    }
+  //fs.readFile(path.resolve(__dirname, "../../", "static/index.html"), "utf8", (err, data) => {
+    // if (err) {
+    //   console.error(err);
+    //   return res.status(500).send("An error occurred");
+    // }
+
+    const data = `<!DOCTYPE html>
+    <html>
+    
+    <head>
+      <meta charset="utf-8" />
+      <title>SSR App</title>
+    </head>
+    
+    <body>
+      <div id="root"></div>
+      <script src="bundle.js"></script>
+    </body>
+    
+    </html>`;
 
     return res.send(
       data.replace(
@@ -28,7 +43,7 @@ app.get("/", (req, res) => {
         `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`
       )
     );
-  });
+  //});
 });
 
 
