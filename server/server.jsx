@@ -30,7 +30,7 @@ fs.readdir('/var/task', (err, files) => {
 });
 
 app.use(
-  express.static("./.amplify-hosting/static", { maxAge: "30d" })
+  express.static(path.resolve(__dirname, "static"), { maxAge: "30d" })
 );
 
 
