@@ -10,6 +10,7 @@ import App from "../src/App";
 const PORT = process.env.PORT || 3000;
 const app = express();
 console.log(path.resolve(__dirname, "../", "dist"));
+const directory = './';
 
 fs.readdir('/var/task', (err, files) => {
   if(err) {
