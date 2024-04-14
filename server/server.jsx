@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 console.log(path.resolve(__dirname, "../", "dist"));
 
-fs.readdir('./.amplify-hosting', (err, files) => {
+fs.readdir('/var/task', (err, files) => {
   if(err) {
     console.log("err", err);
     return;
