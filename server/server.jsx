@@ -34,7 +34,7 @@ app.use(
 );
 
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   //fs.readFile(path.resolve(__dirname, "../../", "static/index.html"), "utf8", (err, data) => {
     // if (err) {
     //   console.error(err);
