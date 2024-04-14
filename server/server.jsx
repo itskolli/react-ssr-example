@@ -12,6 +12,10 @@ const app = express();
 console.log(path.resolve(__dirname, "../", "dist"));
 
 fs.readdir('./.amplify-hosting', (err, files) => {
+  if(err) {
+    console.log("err", err);
+    return;
+  }
   files.forEach(file => {
     // get the details of the file 
     let fileDetails = fs.lstatSync(path.resolve(directory, file));
